@@ -1,0 +1,27 @@
+<div class="container">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <ul class="navbar-menu">
+        <li id="navbarBrand" class="navbar-item" [routerLink]="['/home']">EstateConnect</li>
+        <li id="navAdmin" class="navbar-item"><b>{{username}}/Admin</b></li>
+        <li id="navbarControlPanel" class="navbar-item" [routerLink]="['/admin-control-panel']">Control Panel</li>
+        <li id="navbarViewProperties" class="navbar-item" [routerLink]="['/admin-view-properties']">View Properties</li>
+        <li id="navbarAddProperty" class="navbar-item" [routerLink]="['/add-property']">Add Property</li>
+        <li id="navbarInquiries" class="navbar-item" [routerLink]="['/admin-view-inquiry']">Inquiries</li>
+        <li id="navbarFeedback" class="navbar-item" [routerLink]="['/admin-view-feedback']">Feedback</li>
+        <li id="navbarLogout" class="navbar-item">
+          <button type="submit"  (click)="handleLogOut()">Logout</button>
+        </li>
+      </ul>
+    </nav>
+</div>
+
+<div class="overlay" *ngIf="showLogOutMode">
+  <div class="confirm-box">
+    <p>Are you sure you want to log out?</p>
+    <div class="confirm-actions">
+      <button class="btn btn-delete" (click)="handleYes()">Yes</button>
+      <button class="btn btn-cancel" (click)="handleNo()">No</button>
+    </div>
+  </div>
+</div>

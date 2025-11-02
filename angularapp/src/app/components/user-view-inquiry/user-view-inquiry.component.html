@@ -1,0 +1,26 @@
+<div class="inquiry-container">
+    <h2 class="inquiry-title">Your Inquiries</h2>
+  
+    <table class="inquiry-table" *ngIf="inquiries?.length > 0">
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Message</th>
+          <th>Priority</th>
+          <th>Status</th>
+          <th>Admin Response</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let inquiry of inquiries">
+          <td>{{ inquiry?.property?.title }}</td>
+          <td>{{ inquiry.message }}</td>
+          <td>{{ inquiry.priority }}</td>
+          <td>{{ inquiry.status }}</td>
+          <td>{{ inquiry.adminResponse || 'No response yet' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <p *ngIf="inquiries?.length === 0" class="no-inquiries">No inquiries found.</p>
+  </div>

@@ -1,0 +1,11 @@
+
+#Frontend
+angularapp/node_modules
+angularapp/package-lock.json
+angularapp/tslint.json
+angularapp/tsconfig.spec.json
+angularapp/.env
+
+#Backend
+springapp/target
+springapp/.mvn

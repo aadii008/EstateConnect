@@ -1,0 +1,36 @@
+<div class="container">
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <ul class="navbar-menu">
+      <li id="navEstateConnect" class="navbar-item" [routerLink]="['/home']">
+        EstateConnect
+      </li>
+      <li id="navUser" class="navbar-item">
+       <b>{{username}}/User</b>
+      </li>
+      <li id="navProperties" class="navbar-item" [routerLink]="['/user-view-properties']">
+        Properties
+      </li>
+      <li id="navInquiries" class="navbar-item" [routerLink]="['/user-view-inquiry']">
+        My Inquiries
+      </li>
+      <li id="navFeedback" class="navbar-item" [routerLink]="['/user-view-feedback']">
+        Feedback
+      </li>
+      <li id="navLogout" class="navbar-item">
+        <button type="submit" (click)="handleLogOut()">Logout</button>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<div class="overlay" *ngIf="showLogOutMode">
+  <div class="confirm-box">
+    <p>Are you sure you want to log out?</p>
+    <div class="confirm-actions">
+      <button class="btn btn-delete" (click)="handleYes()">Yes</button>
+      <button class="btn btn-cancel" (click)="handleNo()">No</button>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,23 @@
+<div class="property-container">
+  <h2 class="section-title">Explore Properties</h2>
+
+  <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+  <p *ngIf="properties?.length === 0">No properties available.</p>
+
+  <div class="property-grid">
+    <div class="property-card" *ngFor="let property of properties">
+      <h3 class="property-title">{{ property.title }}</h3>
+      <p>{{ property.description }}</p>
+      <p><strong>Location:</strong> {{ property.location }}</p>
+      <p><strong>Price:</strong> {{ property.price | currency }}</p>
+      <p><strong>Type:</strong> {{ property.type }}</p>
+      <p><strong>Status:</strong> {{ property.status }}</p>
+      <button 
+      class="btn btn-accent" 
+      (click)="navigateToInquiry(property.propertyId)" 
+      [disabled]="property.status === 'Sold'" >
+      Inquire
+      </button>
+    </div>
+  </div>
+</div>

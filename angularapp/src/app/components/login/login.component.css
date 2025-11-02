@@ -1,0 +1,156 @@
+:root {
+  --primary-gold: #FFD700;
+  --black-box: rgba(0, 0, 0, 0.85);
+  --white-text: #FFFFFF;
+  --soft-text: #F0F0F0;
+  --gold-shadow: rgba(255, 215, 0, 0.2);
+  --gold-border: rgba(255, 215, 0, 0.3);
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.image-section img {
+  height: 100%;
+  width: 50%;
+  object-fit: cover;
+}
+.form-container{
+  padding: 100px;
+}
+
+.form-section {
+  flex: 1;
+  padding: 100px;
+  background-color: var(--black-box);
+  color: var(--soft-text);
+  box-shadow: 0 0 10px var(--gold-shadow);
+  border-left: 1px solid var(--gold-border);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #e6c200;
+}
+
+
+
+.form-group2 {
+  margin-bottom: 0.5rem;
+}
+
+.form-group1 {
+  margin-bottom: 0.5rem;
+}
+
+
+
+
+input, select {
+  width: 100%;
+  padding: 0.7rem;
+  box-sizing: border-box;
+  border: 1px solid var(--gold-border, #ffd700);
+  border-radius: 6px;
+  background-color: #1a1a1a;
+  color: #FFFFFF;
+  font-size: medium;
+}
+
+input::placeholder {
+  color: #F0F0F0 ;
+}
+
+button {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #e6c200;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: medium;
+}
+
+button:hover {
+  background-color: #d4b000;
+}
+
+
+.error {
+  color: #ff4d4d;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.error-message {
+  color: #ff4d4d;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.signup-link {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.signup-link a {
+  color: #e6c200;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+.password-wrapper {
+  margin-bottom: 1rem;
+}
+
+.password-field {
+  position: relative;
+  width: 100%;
+}
+
+.password-field input {
+  width: 100%;
+  padding-right: 70px;
+}
+
+.toggle-password-button {
+  width: fit-content;
+  height: 10px;
+  font-size: 0.9rem;
+  background-color:transparent;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  border: none;
+  cursor: pointer;
+  margin-top: -20px;
+}
+
+
+.toggle-password-button p {
+  margin-bottom: 62px;
+  padding: 0;
+  color: #ffd700;
+  background-color: transparent;
+}
+
+
+.toggle-password-button:hover,
+.toggle-password-button p:hover {
+  background-color: transparent;
+  color: #ffd700;
+}
+

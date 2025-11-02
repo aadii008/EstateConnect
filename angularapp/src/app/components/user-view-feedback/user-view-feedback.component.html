@@ -1,0 +1,32 @@
+<div class="property-container">
+  <h2 class="section-title">My Feedback</h2>
+
+  <table class="feedback-table" *ngIf="feedbackList.length > 0; else noData">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Message</th>
+        <th>Date</th>
+        <th>Category</th>
+        <th>Property</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let feedback of feedbackList; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{feedback.feedbackText}}</td>
+        <td>{{ feedback.date | date:'mediumDate' }}</td>
+        <td>{{ feedback.category }}</td>
+        <td>{{ feedback?.property?.title }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noData>
+    <div class="no-data">No Data Found</div>
+  </ng-template>
+</div>
+
+
+
+<button class="bottom-right-btn" (click)="handleBottomRightClick()">Add New Feedback</button>

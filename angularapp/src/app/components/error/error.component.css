@@ -1,0 +1,18 @@
+
+
+.error-message {
+    text-align: center;
+    font-size: 28px;
+    margin-top: 250px;
+}
+
+.error-message p {
+    color: black;
+    font-size: 16px;
+    text-align: center;
+}
+
+.error-message h2{
+    color:#ffd700;
+    text-align: center;
+}

@@ -1,0 +1,212 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap');
+
+/* Base Styles */
+.container {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-image: url('https://images.pexels.com/photos/1042594/pexels-photo-1042594.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-overlay {
+  margin-bottom: 40px;
+}
+
+.main-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 60px;
+  font-weight: 700;
+  color: #FFD700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.main-subtitle {
+  font-size: 18px;
+  color: white;
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+/* Hero Box */
+.hero-box {
+  background-color: rgba(0, 0, 0, 0.85); /* Solid black with slight transparency */
+  padding: 20px 40px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+.box-title {
+  font-family: 'Poppins', serif;
+  color: #FFD700;
+  font-size: 32px;
+  margin: 0;
+}
+
+.box-subtitle {
+  font-size: 16px;
+  color: white;
+  margin-top: 10px;
+}
+
+/* Content Sections */
+.body-section,
+.about-section{
+  background-color: rgba(0, 0, 0, 0.85); /* Solid black */
+  padding: -8px 20px;
+  max-width: 800px;
+  margin: 30px auto;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+  text-align: center;
+}
+.contact-section {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.95); /* Slightly darker for footer feel */
+  padding: -8px 20px;
+  border-top: 1px solid #FFD700;
+  box-shadow: 0 -5px 15px rgba(255, 215, 0, 0.2);
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+} 
+.contact-footer {
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* spacing between items */
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
+  margin-top: 20px;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.contact-footer p{
+  margin:0;
+  font-size: 16px;
+  padding-left: 55px;
+}
+
+.body-section h2,
+.about-section h2,
+.contact-section h2 {
+  font-family: 'Poppins', serif;
+  color: #FFD700;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.body-section p,
+.about-section p {
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Contact Section Specific Styling */
+.contact-section p {
+  margin: 8px 0;
+}
+
+.contact-section strong {
+  color: #FFD700;
+}
+
+.contact-section span {
+  color: #fff;
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fade-in Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply Animation to Sections */
+.hero,
+.hero-box,
+.body-section,
+.about-section,
+.contact-section {
+  animation: fadeInUp 2s ease forwards;
+}
+
+/* Hover Effects */
+.main-title:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.hero-box:hover,
+.body-section:hover,
+.about-section:hover,
+.contact-section:hover {
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 48px;
+  }
+
+  .main-subtitle {
+    font-size: 16px;
+  }
+
+  .box-title {
+    font-size: 28px;
+  }
+
+  .box-subtitle {
+    font-size: 14px;
+  }
+
+  .body-section h2,
+  .about-section h2,
+  .contact-section h2 {
+    font-size: 24px;
+  }
+
+  .body-section p,
+  .about-section p,
+  .contact-section p {
+    font-size: 15px;
+  }
+}  

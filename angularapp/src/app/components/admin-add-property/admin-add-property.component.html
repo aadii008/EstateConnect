@@ -1,0 +1,69 @@
+<div class="form-container">
+    <h2>Add New Property</h2>
+  
+    <form [formGroup]="propertyForm" (ngSubmit)="onSubmit()" class="property-form">
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" id="title" formControlName="title" />
+        <div *ngIf="propertyForm.get('title')?.invalid && propertyForm.get('title')?.touched" class="error-message">
+          Title is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" formControlName="description"></textarea>
+        <div *ngIf="propertyForm.get('description')?.invalid && propertyForm.get('description')?.touched" class="error-message">
+          Description is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="location">Location:</label>
+        <input type="text" id="location" formControlName="location" />
+        <div *ngIf="propertyForm.get('location')?.invalid && propertyForm.get('location')?.touched" class="error-message">
+          Location is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="number" id="price" formControlName="price" />
+        <div *ngIf="propertyForm.get('price')?.invalid && propertyForm.get('price')?.touched" class="error-message">
+          <span *ngIf="propertyForm.get('price')?.errors?.required">Price is required.</span>
+          <span *ngIf="propertyForm.get('price')?.errors?.min">Price must be a positive number.</span>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="type">Type:</label>
+        <select id="type" formControlName="type">
+          <option *ngFor="let type of propertyTypes" [value]="type">{{ type }}</option>
+        </select>
+        <div *ngIf="propertyForm.get('type')?.invalid && propertyForm.get('type')?.touched" class="error-message">
+          Type is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="status">Status:</label>
+        <select id="status" formControlName="status">
+          <option *ngFor="let status of propertyStatuses" [value]="status">{{ status }}</option>
+        </select>
+        <div *ngIf="propertyForm.get('status')?.invalid && propertyForm.get('status')?.touched" class="error-message">
+          Status is required.
+        </div>
+      </div>
+  
+      <div class="form-actions">
+        <button type="submit" class="submit-button" [disabled]="propertyForm.invalid">ADD PROPERTY</button>
+        <div *ngIf="propertyForm.invalid && propertyForm.touched" class="form-submission-error">
+            Failed to add property. Please correct the errors.
+        </div>
+        <button type="button" class="close-button" (click)="onClose()">CLOSE</button>
+      </div>
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+    </form>
+  </div>

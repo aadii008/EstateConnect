@@ -1,0 +1,127 @@
+body, html {
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.property-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 32px;
+  background-color: #121212;
+  color: #ffffff;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+/* Section Title */
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  margin: 55px 0 30px;
+  color: #ffeb3b;
+}
+
+.feedback-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.feedback-table th,
+.feedback-table td {
+  border: 1px solid #444;
+  padding: 12px 16px;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+.feedback-table th {
+  background-color: #222;
+  color: #ffeb3b;
+  font-weight: 600;
+}
+
+.feedback-table td {
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+}
+
+.feedback-table tr:hover {
+  background-color: #2a2a2a;
+}
+
+/* No Data Message */
+.no-data {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 18px;
+  color: #ffcc00;
+  background-color: #1a1a1a;
+  padding: 15px;
+  border: 1px solid #444;
+  border-radius: 8px;
+}
+
+/* Bottom Right Button */
+.bottom-right-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ffd700;
+  color: black;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.bottom-right-btn:hover {
+  background-color: #e6c200;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .property-container {
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .feedback-table th,
+  .feedback-table td {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .bottom-right-btn {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .feedback-table th,
+  .feedback-table td {
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+
+  .bottom-right-btn {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}

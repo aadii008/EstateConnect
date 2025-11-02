@@ -1,0 +1,116 @@
+.feedback-container {
+  padding: 30px;
+  background-color: #1a1a1a;
+  color: var(--white-text);
+  border-radius: 8px;
+  box-shadow: 0 0 10px var(--gold-shadow);
+  max-width: 600px;
+  margin-top: 120px;
+  margin-left: 350px;
+}
+
+.feedback-container h2 {
+ 
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #ffd700;
+}
+
+
+
+label {
+  display: block;
+  margin-top: 1rem;
+  color: #ffd700;
+}
+
+textarea,
+input,
+select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #333;
+  color: #e0e0e0;
+}
+
+#date{
+  width: 97%;
+}
+
+select:disabled {
+  background-color: #444;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.submit-btn {
+  margin-top: 1.5rem;
+  background-color: #ffd700;
+  color: black;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+.modal-overlay {
+position: fixed;
+top: 35%;
+left: 33%;
+width: 50%;
+background-color: rgba(0, 0, 0, 0.7);
+display: flex;
+padding: 30px;
+border-radius: 12px;
+text-align: center;
+color: white;
+max-width: 400px;
+box-shadow: 0 0 10px #ffeb3b;
+
+}
+
+.modal-box {
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+.modal-box button {
+margin-top: 1rem;
+padding: 0.5rem 1rem;
+background-color: #ffd700;
+color: var(--black-box);
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+.model-box p {
+font-size: 18px;
+margin-bottom: 20px;
+}
+
+.popup button {
+background-color: #ffd700;
+color: #1a1a1a;
+font-weight: bold;
+padding: 10px 15px;
+border: none;
+border-radius: 5px;
+font-size: 14px;
+cursor: pointer;
+width: 100%;
+transition: background-color 0.3s ease;
+
+}
+
+.message-area{
+width: 97%;
+}

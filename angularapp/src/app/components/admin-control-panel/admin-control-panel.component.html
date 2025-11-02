@@ -1,0 +1,40 @@
+<div class="container">
+    <h1>Admin Control Panel</h1>
+    <div class="dashboard-cards">
+        <a href="/admin-view-feedback">
+            <div class="card">
+                <h2>Total Feedbacks</h2>
+                <p class="count">{{adminData['totalFeedback']}}</p>
+            </div>
+        </a>
+        
+        <a href="/admin-view-inquiry">
+            <div class="card">
+                <h2>Total Inquiries</h2>
+                <p class="count">{{adminData['totalInquiries']}}</p>
+            </div>
+        </a>
+
+        <a href="/admin-view-properties">
+            <div class="card">
+                <h2>Total Properties</h2>
+                <p class="count">{{adminData['totalProperties']}}</p>
+            </div>
+        </a>
+        
+        
+        <a href="/admin-view-inquiry?s=Pending">
+            <div class="card">
+                <h2>Unresolved Inquiries</h2>
+                <p class="count">{{adminData['unresolvedInquiries']}}</p>
+            </div>
+        </a>
+
+        <a href="/admin-view-inquiry?p=High">
+            <div class="card high-priority">
+                <h2>High Priority Inquiries</h2>
+                <p class="count">{{adminData['highPriorityInquiries']}}</p>
+            </div>
+        </a>
+    </div>
+</div>

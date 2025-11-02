@@ -1,0 +1,75 @@
+<div class="feedback-container">
+  <h2>Submit Feedback</h2>
+
+  <!-- Category Dropdown -->
+  <label for="category">Category</label>
+  <select
+    id="category"
+    [(ngModel)]="category"
+    name="category"
+    
+    (change)="filterPropertiesByCategory()"
+    required
+  >
+    <option value="" selected>Select Category</option>
+    <option>Commercial</option>
+    <option>Residential</option>
+    <option>Land</option>
+  </select>
+
+  <!-- Property Dropdown -->
+  <label for="property">Property</label>
+  <select
+    id="property"
+    [(ngModel)]="selectedPropertyId"
+    name="property"
+    [disabled]="category === ''"
+    required
+  >
+    <option value="" disabled selected>Select Property</option>
+    <option *ngFor="let p of properties" [value]="p.propertyId">
+      {{ p.title }}
+    </option>
+  </select>
+
+  <form (ngSubmit)="onSubmit()">
+    <!-- Message Textarea -->
+    <div class="message-area">
+      <label for="feedbackText">Message</label>
+      <textarea
+        id="feedbackText"
+        [(ngModel)]="feedbackText"
+        name="feedbackText"
+        rows="4"
+        (input)="onMessageInput()"
+        required
+      ></textarea>
+    </div>
+ 
+    <!-- Date (Read-only) -->
+    <label for="date">Date</label>
+    <input
+      id="date"
+      [(ngModel)]="date"
+      name="date"
+      readonly
+      required
+    />
+ 
+  
+    <!-- Submit Button -->
+    <button type="submit" class="submit-btn">Submit Feedback</button>
+  </form>
+</div>
+ 
+<!-- Popup Modal -->
+<div class="modal-overlay" *ngIf="showSuccessPopup || showErrorPopup">
+  <div class="modal-box">
+    <p>
+      {{ showSuccessPopup ? 'Feedback Submitted Successfully!' : 'Failed to submit feedback. Please try again.' }}
+    </p>
+    <div class="confirm-actions">
+      <button class="btn-ok" (click)="closePopup()">OK</button>
+    </div>
+  </div>
+</div>

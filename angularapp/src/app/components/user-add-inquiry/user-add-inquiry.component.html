@@ -1,0 +1,30 @@
+<div class="inquiry-form">
+    <h2>Submit Your Inquiry</h2>
+    <form [formGroup]="inquiryForm" (ngSubmit)="onSubmit()">
+      <label for="property">Property:</label>
+      <input id="property" formControlName="property" type="text" readonly/>
+  
+      <label for="message">Message:</label>
+      <textarea id="message" formControlName="message"></textarea>
+  
+      <label for="priority">Priority:</label>
+      <select id="priority" formControlName="priority">
+        <option value="">Select Priority</option>
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+  
+      <button type="submit" class="submit-btn" [disabled]="inquiryForm.invalid">Submit Inquiry</button>
+    </form>
+  </div>
+
+
+<div class="overlay" *ngIf="showPopUp">
+  <div class="confirm-box">
+    <p>Inquiry submitted successfully</p>
+    <div class="confirm-actions">
+      <button class="btn-ok" (click)="onOkClick()">OK</button>
+    </div>
+  </div>
+</div>

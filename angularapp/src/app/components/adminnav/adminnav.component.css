@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap');
+
+/* Navigation Bar */
+.navbar {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 15px 30px;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+/* Brand (Left Side) */
+#navbarBrand {
+  margin-right: auto;
+  font-size: 18px;
+  font-weight: 600;
+  color: #FFD700;
+  padding: 10px 15px;
+  cursor: default;
+}
+
+/* Navigation Items */
+#navAdmin,
+#navbarHome,
+#navbarControlPanel,
+#navbarViewProperties,
+#navbarAddProperty,
+#navbarInquiries,
+#navbarFeedback,
+#navbarLogout {
+  font-size: 16px;
+  color: #FFD700;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+#navbarBrand:hover,
+/*#navAdmin:hover, */
+#navbarHome:hover,
+#navbarControlPanel:hover,
+#navbarViewProperties:hover,
+#navbarAddProperty:hover,
+#navbarInquiries:hover,
+#navbarFeedback:hover,
+#navbarLogout:hover {
+  background-color: rgba(255, 215, 0, 0.2);
+  border-radius: 5px;
+  transform: scale(1.05);
+}
+
+/* Logout Button */
+#navbarLogout button {
+  background-color: #FFD700;
+  color: black;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  white-space: nowrap;
+}
+
+#navbarLogout button:hover {
+  background-color: #e6c200;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Typography & Navbar */
+@media (max-width: 768px) {
+  body {
+    background-size: 150%;
+  }
+
+  .navbar-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #navbarBrand,
+  #navAdmin,
+  #navbarHome,
+  #navbarControlPanel,
+  #navbarViewProperties,
+  #navbarAddProperty,
+  #navbarInquiries,
+  #navbarFeedback,
+  #navbarLogout {
+    padding: 8px 10px;
+  }
+
+  #navbarLogout button {
+    padding: 6px 12px;
+  }
+}
+
+.btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.overlay {
+  position: fixed;
+  top: 35%;
+  left: 32%;
+  width: 50%;
+  display: flex;
+  background-color: black;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  max-width: 400px;
+  box-shadow: 0 0 10px #ffeb3b;
+  z-index: 100;
+}
+
+.btn-delete {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #d32f2f;
+}
+
+.btn-cancel {
+  background-color: #ffeb3b;
+  color: black;
+}
+
+.btn-cancel:hover {
+  background-color: #fdd835;
+}
+
+.confirm-box {
+  width: 100%;
+  flex: display;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm-box p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.confirm-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}

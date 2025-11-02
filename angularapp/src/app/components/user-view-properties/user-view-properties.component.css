@@ -1,0 +1,83 @@
+
+body, html {
+  background-color: #000000;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+.property-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  color: white;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  color: #ffeb3b;
+}
+
+.property-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.property-card {
+  background-color: #2c2c2c; 
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.property-card:hover {
+  transform: translateY(-5px);
+}
+
+.property-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #ffeb3b;
+}
+
+.btn-accent {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.btn-accent:hover {
+  background-color: #fb8c00;
+}
+
+.error-message {
+  color: #d32f2f;
+  background-color: #fbe9e7;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.btn-accent:disabled {
+  background-color: #9e9e9e;
+  color: #e0e0e0;      
+  cursor: not-allowed;    
+  opacity: 0.7;             
+}
+

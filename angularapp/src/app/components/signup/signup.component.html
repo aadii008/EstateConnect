@@ -1,0 +1,86 @@
+<div class="signup-container">
+  <div class="form-and-image">
+    <img src="https://images.pexels.com/photos/1042594/pexels-photo-1042594.jpeg" alt="" height="100%" width="50%">
+
+
+    <div class="form-container">
+
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <h2>Sign Up</h2>
+
+        <div class="form-input">
+          <input type="text" formControlName="username" placeholder="Username" />
+          <div class="" *ngIf="signupForm.get('username').invalid && (signupForm.get('username').touched || submitted)">
+            <div *ngIf="signupForm.get('username').errors?.required" class="error">Username is required.</div>
+          </div>
+
+          <input type="email" formControlName="email" placeholder="Email" />
+          <div class="" *ngIf="signupForm.get('email').invalid && (signupForm.get('email').touched || submitted)">
+            <div *ngIf="signupForm.get('email').errors?.required" class="error">Email is required.</div>
+            <div *ngIf="signupForm.get('email').errors?.pattern" class="error">Invalid email format.</div>
+          </div>
+
+          <input type="text" formControlName="mobileNumber" placeholder="Mobile" />
+          <div class="" *ngIf="signupForm.get('mobileNumber').invalid && (signupForm.get('mobileNumber').touched || submitted)">
+            <div *ngIf="signupForm.get('mobileNumber').errors?.required" class="error">Mobile number is required.</div>
+            <div *ngIf="signupForm.get('mobileNumber').errors?.pattern" class="error">Enter a valid 10-digit mobile
+              number.</div>
+          </div>
+
+
+          <div class="form-input password-wrapper">
+            <div class="password-field">
+              <input [type]="showPassword ? 'text' : 'password'" formControlName="password" placeholder="Password"
+                class="form-control" />
+              <button type="button" class="toggle-password-button" (click)="togglePasswordVisibility()">
+                {{ showPassword ? 'Hide' : 'Show' }}
+              </button>
+            </div>
+
+
+            <!-- Validation messages -->
+            <div *ngIf="signupForm.get('password')?.invalid && (signupForm.get('password')?.touched || submitted)">
+              <div *ngIf="signupForm.get('password')?.errors?.required" class="error">
+                Password is required.
+              </div>
+              <div *ngIf="signupForm.get('password')?.errors?.pattern" class="error">
+                Should contain min 8 chars, with 1 uppercase, 1 lowercase, 1 digit and 1 special character.
+              </div>
+            </div>
+          </div>
+
+
+          <input type="password" formControlName="confirmPassword" placeholder="Confirm Password" />
+          <div class="" *ngIf="signupForm.get('confirmPassword').invalid && (signupForm.get('confirmPassword').touched || submitted)">
+            <div *ngIf="signupForm.get('confirmPassword').errors?.required" class="error">Confirm password is required.
+            </div>
+            <div *ngIf="signupForm.get('confirmPassword').errors?.mustMatch" class="error">Passwords do not match.</div>
+          </div>
+
+          <select formControlName="userRole">
+            <option value="">Select Role</option>
+            <option value="USER">User</option>
+            <option value="ADMIN">Admin</option>
+          </select>
+          <div class="" *ngIf="signupForm.get('userRole').invalid && (signupForm.get('userRole').touched || submitted)">
+            <div *ngIf="signupForm.get('userRole').errors?.required" class="error">Role selection is required.</div>
+          </div>
+        </div>
+
+        <button type="submit">Register</button>
+        <div class="login-link">
+          <a routerLink="/login">Already have an account? Login </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" *ngIf="showPopUp">
+  <div class="confirm-box">
+    <p>{{popUpMessage}}</p>
+    <div class="confirm-actions">
+      <button class="btn-ok" (click)="onOkClick()">OK</button>
+    </div>
+  </div>
+</div>
